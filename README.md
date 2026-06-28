@@ -1,12 +1,12 @@
-# Improvement of n-gram repeats and CIDEr language scores in GRPO reinforcement learning for image captioning models incorporating a CRF layer
+# Improvement of n-gram repeats, CIDEr and CLIP_score language scores in GRPO reinforcement learning for image captioning models incorporating a CRF layer
 
-We performed supervised learning （SFT) on an image captioning model equipped with a CRF layer,
+We performed supervised pre-training （SPT) on an image captioning model equipped with a CRF layer,
 ```
 CLIP + MLP_connector + BERT + CRF-layer
 ```
 and subsequently applied GRPO reinforcement learning to the results. The results of SFT were characterized by n-gram repetitions and relatively short sentences. We report here that, by employing reinforcement learning, we were able to reduce n-gram repetitions and improve the language score.
 
-## Result of SFT
+## Result of SPT
 
 ### Each score based on test data
 
