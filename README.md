@@ -247,4 +247,6 @@ refe: [CLS] a bird flying towards a branch on tree. [SEP]
 
 ## I have uploaded the program used for reinforcement learning.
 
-Directory is GRPO_suppl_compatible_transformers5
+Directory is GRPO_suppl_compatible_transformers5.
+
+Train data is COCO train2017.
