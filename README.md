@@ -149,12 +149,14 @@ repeat_count 0.272
 ### Generated captions
 
 Picture 1
+![Screenshot from 2026-06-14 08-22-09.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/adf35ffa-19bd-4952-a8c0-908883156702.png)
 ```
 hypo: [CLS] a pair of scissors sitting on a table. [SEP]
 refe: [CLS] a selection of scissors, including pinking shears, under a glass shelf. [SEP]
 ```
 
 Picture 2
+![Screenshot from 2026-06-14 08-22-30.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/37fdf49f-75bd-42e5-8c38-d9216604637e.png)
 ```
 hypo: [CLS] a person holding an umbrella on the street. [SEP]
 refe: [CLS] a person holding an open umbrella and a cell phone [SEP]
