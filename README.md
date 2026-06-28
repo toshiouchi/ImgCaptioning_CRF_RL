@@ -117,7 +117,7 @@ hypo: [CLS] a bird bird sitting on a tree bird. [SEP]
 refe: [CLS] a bird flying towards a branch on tree. [SEP]
 ```
 
-## Reinforcement Learning via GRPO
+## Result of Reinforcement Learning via GRPO
 
 ### Learning curve for validation data
 
