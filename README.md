@@ -17,6 +17,8 @@ clip_score   0.255
 bert_score   0.808
 repeat_count 1.21
 ```
+The `repeat_count` takes a high value when there are many n-gram repetitions and a low value when there are few.
+
 
 ### Generated captions
 
