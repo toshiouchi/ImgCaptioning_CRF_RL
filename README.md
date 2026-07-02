@@ -1,6 +1,6 @@
-Improvement of n-gram repetition and caption length in GRPO reinforcement learning for image captioning models incorporating a CRF layer
+# Improvement of n-gram repetition and caption length in GRPO reinforcement learning for image captioning models incorporating a CRF layer
 
-# Introduction
+## Introduction
 
 Currently, the dominant approach for text generation involves models that utilize a Transformer Decoder in an autoregressive manner. However, autoregressive computation requires a number of operations proportional to the sequence length of the generated text, thereby demanding significant computational resources and time, as well as expensive systems. As generative AI becomes more widespread, the demand for cost-effective system implementations is expected to rise. To meet this need, it is essential to develop non-autoregressive computational methods. Non-autoregressive methods require only a single pass of computation, enabling efficient processing with lower resource consumption and reduced execution time.
 
@@ -14,8 +14,7 @@ Since the CRF layer handles token transition probabilities from sequence i-1 to 
 
 I originally developed the program about a year ago, so it was designed for the Hugging Face `transformers` v4 series; however, now that I have some free time following a break in the computations, I have updated it to support the `transformers` v5 series and am running the calculations.
 
-# SPT results
-
+## SPT results
 
 Regarding SPT,
 
@@ -23,7 +22,7 @@ https://qiita.com/toshiouchi/items/cef093035db06cc54e9a
 
 might be a useful reference. I have recalculated it to ensure compatibility with the transformers 5.x series.
 
-## Values ​​of each score for the test data
+### Values ​​of each score for the test data
 
 ```
 cider           0.919
@@ -38,7 +37,7 @@ The `repeat_count` takes a high value when there are many n-gram repetitions and
 
 I will explain `length_penalty`. The lengths of the generated caption and the ground-truth caption are scaled to 1 by dividing them by a fixed maximum caption length of 97. `length_penalty` is the average value of the squared difference between these two scaled lengths, multiplied by -1. A value closer to 0 indicates that the length of the generated caption is closer to that of the ground-truth caption.
 
-## Genarated captions
+### Genarated captions
 
 Picture 1
 ![Screenshot from 2026-07-01 09-55-21.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/3bbceb1c-0f57-47b8-aa16-e03e919fbeec.png)
@@ -105,9 +104,9 @@ hypo: [CLS] a woman in a kitchen with a kitchen. [SEP]
 refe: [CLS] the frantic lady is checking her latest concoction. [SEP]
 ```
 
-# Results of GRPO Reinforcement Learning
+## Results of GRPO Reinforcement Learning
 
-## Learning curve for validation data
+### Learning curve for validation data
 
 The learning curves for repeat_penalty, length_penalty × 1000, CIDEr, ROUGE-L, CLIP_score, and BERT_score during validation are shown.
 
@@ -124,7 +123,7 @@ The learning curves for repeat_penalty, length_penalty × 1000, CIDEr, ROUGE-L, 
 ![Screenshot from 2026-07-01 10-06-43.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/8e47ddd1-9718-4736-9ac8-edd34040e9b8.png)
 
 
-## Each score for the test data
+### Each score for the test data
 
 ```
 cider           0.861
@@ -135,7 +134,7 @@ repeat_count    0.240
 length_penalty -1.34 e-3
 ```
 
-## Generated captions
+### Generated captions
 
 Picture 1
 ![Screenshot from 2026-07-01 09-55-21.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/02b0d709-4739-4481-9a1e-dd8c13b7d7f1.png)
@@ -201,11 +200,11 @@ refe: [CLS] a bird perched on a park bench as a cat hides underneath. [SEP]
 hypo: [CLS] a woman standing in a kitchen preparing oven. [SEP]
 refe: [CLS] a person in a room in front of a stove. [SEP]
 ```
-# Comparison
+## Comparison
 
 Reinforcement learning has improved `repeat_count` and `length_penalty`. Language-specific scores and `clip_score` are also maintained at favorable levels.
 
-# I'm putting the reinforcement learning program on GitHub.
+## I'm putting the reinforcement learning program on GitHub.
 
 https://github.com/toshiouchi/ImgCaptioning_CRF_RL/tree/main
 
@@ -213,7 +212,7 @@ The directories are GRPO_suppl_compatible_transformers5 and COCO_SPT_compatible_
 
 The training data is COCO train2017.
 
-# Points to note regarding the program.
+## Points to note regarding the program.
 
 1. We use a proprietary stochastic Viterbi sampling function developed for GRPO.
 1. The image captioning model performs calculations involving top-k approximation in three stages: sampling, training, and kl_div reference. The `torch.topk` function is executed only during sampling; for the training and reference stages, the `beam_emission_scores` are calculated using the `top_indices` obtained during sampling.
