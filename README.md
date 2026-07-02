@@ -40,6 +40,7 @@ I will explain `length_penalty`. The lengths of the generated caption and the gr
 ### Genarated captions
 
 Picture 1
+
 ![Screenshot from 2026-07-01 09-55-21.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/3bbceb1c-0f57-47b8-aa16-e03e919fbeec.png)
 ```
 hypo: [CLS] a dog that is playing its floor with its floor. [SEP]
@@ -47,6 +48,7 @@ refe: [CLS] a golden retriever eating something on a hardwood floor. [SEP]
 ```
 
 Picture 2
+
 ![Screenshot from 2026-07-01 09-57-15.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/89b83647-d5d1-4604-8da7-a324a7ad4f0a.png)
 ```
 hypo: [CLS] a white plate topped with a plate on a plate. [SEP]
@@ -137,6 +139,7 @@ length_penalty -1.34 e-3
 ### Generated captions
 
 Picture 1
+
 ![Screenshot from 2026-07-01 09-55-21.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/02b0d709-4739-4481-9a1e-dd8c13b7d7f1.png)
 ```
 hypo: [CLS] a dog that is sitting on the floor. [SEP]
@@ -144,6 +147,7 @@ refe: [CLS] a dog chewing on a stick on a hardwood floor. [SEP]
 ```
 
 Picture 2
+
 ![Screenshot from 2026-07-01 09-57-15.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/2958180/89b83647-d5d1-4604-8da7-a324a7ad4f0a.png)
 ```
 hypo: [CLS] a close up topped with a sandwich. [SEP]
